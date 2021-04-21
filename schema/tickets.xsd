@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="tickets">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ticket" minOccurs="0" maxOccurs="unbounded"><!--Ticket-->
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="issueDate" type="xs:dateTime"/><!--Ticket->Issue Date-->
+                            <xs:element name="clientId" type="xs:positiveInteger"/><!--Ticket->Client Id-->
+                            <xs:element name="messages" minOccurs="0"><!--Ticket->Messages-->
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="message" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <!--Message Attributes-->
+                                                        <xs:attribute name="userId" type="xs:positiveInteger" use="required"/><!--Message:User Id-->
+                                                        <xs:attribute name="postedDate" type="xs:date" use="required"/><!--Message:Posted Date-->
+                                                        <xs:attribute name="time" type="xs:time" use="required"/><!--Message:Time-->
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <!--Ticket Attributes-->
+                        <xs:attribute name="ticketId" type="xs:positiveInteger" use="required"/><!--Ticket:Ticket Id-->
+                        <xs:attribute name="status" use="required"><!--Ticket:Status-->
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="open"/>
+                                    <xs:enumeration value="closed"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="catagory" type="xs:string" use="optional"/><!--Ticket:Category-->
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,47 @@
+body{
+    width: 100%;
+}
+h1, .para-center{
+    text-align: center;
+}
+#spanErrors{
+    color: red;
+}
+#centerContent{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    margin: 0 auto;
+    padding: 10% 0 10% 0;
+}
+#move-right{
+    cursor: pointer;
+    position: absolute;
+    top: 80px;
+    right: 80px;
+}
+#move-right-more{
+    cursor: pointer;
+    position: absolute;
+    top: 110px;
+    right: 80px;
+}
+#move-down{
+    margin-top: 70px;
+}
+#move-down-less{
+    margin-top: 30px;
+}
+#open{
+    color: rgb(5, 182, 5);
+}
+#closed{
+    color: red;
+}
+#text-submit{
+    padding: 5px 50px 5px 50px;
+}
+.text-submit{
+    padding: 10px 0 20px 0;
+}

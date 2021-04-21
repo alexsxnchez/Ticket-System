@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tickets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ticket status="closed" category="return">
+        <ticketId>591147</ticketId>
+        <issueDate>2021-02-02</issueDate>
+        <userId>4567</userId>
+        <messages>
+            <message userId="4567" postedDate="2021-02-02" time="01:50:15 PM">Hi, I would like to return my order and get a refund.</message>
+            <message userId="00123" postedDate="2021-02-02" time="02:00:40 PM">Hello, all return policies are listed on the footer of each page.</message>
+            <message userId="4567" postedDate="2021-02-03" time="01:35:20 PM">Thank you!</message>
+            <message userId="00123" postedDate="2021-03-29" time="08:57:22 PM">Hello Sir - Testing</message>
+            <message userId="4567" postedDate="2021-03-29" time="08:59:07 PM">Hi - (tested) works!</message>
+        <message userId="00123" postedDate="2021-04-04" time="06:03:48 AM">works</message></messages>
+    </ticket>
+    <ticket status="closed" category="purchase">
+        <ticketId>591148</ticketId>
+        <issueDate>2021-02-04</issueDate>
+        <userId>4667</userId>
+        <messages>
+            <message userId="4667" postedDate="2021-02-04" time="10:00:00 AM">Hi, I'm wondering if the diner table set is till on sale?</message>
+            <message userId="00123" postedDate="2021-02-04" time="12:20:40 PM">Hello, unfortunetly the table set is not on sale, the sale ended last week.</message>
+            <message userId="4667" postedDate="2021-02-04" time="02:35:20 PM">Oh okay thats fine then Thank you.</message>
+        </messages>
+    </ticket>
+</tickets>

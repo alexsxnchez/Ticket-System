@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="login">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" minOccurs="0" maxOccurs="unbounded"><!--User-->
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="type"><!--User->Type-->
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="client"/>
+                                        <xs:enumeration value="admin"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="name"><!--User->Name-->
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="first" type="xs:string"/><!--Name->First-->
+                                        <xs:element name="last" type="xs:string"/><!--Name->Last-->
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="username" type="xs:string"/><!--User->Username-->
+                            <xs:element name="password" type="xs:string"/><!--User->Password-->
+                                <!--<xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="1"/>
+                                        <xs:maxLength value="44"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>-->
+                            <xs:element name="email"><!--User->Email-->
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="1"/>
+                                        <xs:maxLength value="100"/>
+                                        <xs:pattern value="[_\-a-zA-Z0-9\.\+]+@[a-zA-Z0-9](\.?[\-a-zA-Z0-9]*[a-zA-Z0-9])*"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                        <!--User Attributes-->
+                        <xs:attribute name="id" type="xs:positiveInteger" use="required"/><!--User:Id-->
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
