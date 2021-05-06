@@ -24,4 +24,16 @@
         </password>
         <email>emmy@example.com</email>
     </user>
+    <user type="client"><!--Admin-->
+        <userId>4667</userId>
+        <name>
+            <first>Susan</first>
+            <last>Rush</last>
+        </name>
+        <username>susanr</username>
+        <password>
+            <encrypted>7faa56f7919348432b5e3189c263d6c0</encrypted><!--Md5(susanr)-->
+        </password>
+        <email>susanr@example.com</email>
+    </user>
 </login>

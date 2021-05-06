@@ -74,6 +74,9 @@ h1{
     font-size: inherit;
     line-height: inherit;
 }
+.message-box{
+    width: 500px;
+}
 .btn-access:hover{
     background-color: coral;
     cursor: pointer;
@@ -94,4 +97,25 @@ th{
 }
 .fa-comment-check{
     color: black;
+}
+.message-prompt{
+    width: 90%;
+    background-color: rgb(253, 223, 201);
+    margin: auto;
+    border-radius: 10px;
+}
+.first-p{
+    padding-left: 10px;
+}
+.second-p{
+    text-align: center;
+}
+.third-p{
+    padding-left: 10px;
+}
+/*436*/
+@media only screen and (max-width: 561px){
+    .message-box{
+        width: 260px;
+    }
 }

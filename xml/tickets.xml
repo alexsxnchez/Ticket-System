@@ -10,7 +10,8 @@
             <message userId="4567" postedDate="2021-02-03" time="01:35:20 PM">Thank you!</message>
             <message userId="00123" postedDate="2021-03-29" time="08:57:22 PM">Hello Sir - Testing</message>
             <message userId="4567" postedDate="2021-03-29" time="08:59:07 PM">Hi - (tested) works!</message>
-        <message userId="00123" postedDate="2021-04-04" time="06:03:48 AM">works</message></messages>
+            <message userId="00123" postedDate="2021-04-04" time="06:03:48 AM">works</message>
+        </messages>
     </ticket>
     <ticket status="closed" category="purchase">
         <ticketId>591148</ticketId>

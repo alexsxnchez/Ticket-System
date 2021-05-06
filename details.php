@@ -40,7 +40,6 @@ if(isset($_SESSION['userid'])){
 } else {
     header('Location: login.php');
 }
-
 //var_dump($ticketInfo->messages);
 
 ?>
@@ -61,27 +60,16 @@ if(isset($_SESSION['userid'])){
         <div class="contain">
             <a href="ticketlist.php" class="btn btn-danger" id="move-right">Go Back</a>
             <div class="col-md-12" id="move-down">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>User</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Messages</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach($ticketInfo->messages as $ticketCollet) { 
-                            foreach($ticketCollet->message as $message){ ?>
-                            <tr>
-                                <td><?= $message->attributes()->userId; ?></td><!--Figure out how to get the user type to show-->
-                                <td><?= $message->attributes()->postedDate; ?></td>
-                                <td><?= $message->attributes()->time; ?></td>
-                                <td><?= $message; ?></td>
-                            </tr>    
-                        <?php } }?>
-                    </tbody>
-                </table>
+                <?php foreach($ticketInfo->messages as $ticketCollet) { 
+                    foreach($ticketCollet->message as $message){ ?>
+                    <div class="message-prompt">
+                        <?php foreach($loginXML as $login){ 
+                            if((strpos($message->attributes()->userId, $login->userId)) !== false){ echo "<p class='first-p'><strong>".$login->username."</strong>"; if($login->attributes()->type == 'admin'){echo ' (Admin)'; } echo "</p>"; } ?><!--Figure out how to get the user type to show-->
+                        <?php } ?>
+                        <p class='second-p'><?= $message; ?></p>
+                        <p class='third-p'><?= $message->attributes()->postedDate; ?> - <?= $message->attributes()->time; ?></p> 
+                    </div> 
+                <?php } }?>
                 <?php if(((string) $ticketInfo->userId == (string) $userInfo->userId) || $admin) { ?>
                 <div class="para-center text-submit">
                     <form action="" method="POST">
