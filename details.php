@@ -55,37 +55,40 @@ if(isset($_SESSION['userid'])){
         <link href="css/global.css" rel="stylesheet"/>
     </head>
     <body>
+        <div class="top-wave"></div>
         <h1>Ticket Messages</h1>
         <hr/>
-        <a href="ticketlist.php" class="btn btn-danger" id="move-right">Go Back</a>
-        <div class="col-md-12" id="move-down">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>User</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Messages</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach($ticketInfo->messages as $ticketCollet) { 
-                        foreach($ticketCollet->message as $message){ ?>
+        <div class="contain">
+            <a href="ticketlist.php" class="btn btn-danger" id="move-right">Go Back</a>
+            <div class="col-md-12" id="move-down">
+                <table class="table table-bordered">
+                    <thead>
                         <tr>
-                            <td><?= $message->attributes()->userId; ?></td><!--Figure out how to get the user type to show-->
-                            <td><?= $message->attributes()->postedDate; ?></td>
-                            <td><?= $message->attributes()->time; ?></td>
-                            <td><?= $message; ?></td>
-                        </tr>    
-                    <?php } }?>
-                </tbody>
-            </table>
-            <?php if(((string) $ticketInfo->userId == (string) $userInfo->userId) || $admin) { ?>
-            <div class="para-center text-submit">
-                <form action="" method="POST">
-                    <textarea class="message-box" name="message" rows="4" cols="50" required></textarea><br/>
-                    <input type="submit" class="btn btn-primary" id="text-submit" name="addmessage" value="Post">
-                </form>
+                            <th>User</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Messages</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($ticketInfo->messages as $ticketCollet) { 
+                            foreach($ticketCollet->message as $message){ ?>
+                            <tr>
+                                <td><?= $message->attributes()->userId; ?></td><!--Figure out how to get the user type to show-->
+                                <td><?= $message->attributes()->postedDate; ?></td>
+                                <td><?= $message->attributes()->time; ?></td>
+                                <td><?= $message; ?></td>
+                            </tr>    
+                        <?php } }?>
+                    </tbody>
+                </table>
+                <?php if(((string) $ticketInfo->userId == (string) $userInfo->userId) || $admin) { ?>
+                <div class="para-center text-submit">
+                    <form action="" method="POST">
+                        <textarea class="message-box" name="message" rows="4" cols="50" required></textarea><br/>
+                        <input type="submit" class="btn btn-primary" id="text-submit" name="addmessage" value="Post">
+                    </form>
+                </div>
             </div>
             <?php } ?>
         </div>

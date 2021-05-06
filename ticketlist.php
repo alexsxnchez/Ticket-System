@@ -54,52 +54,55 @@ if(isset($_SESSION['userid'])){
         <link href="css/global.css" rel="stylesheet"/>
     </head>
     <body>
+        <div class="top-wave"></div>
         <h1>Tickets In The System</h1>
         <div class="para-center">
             <p>Welcome Back <?= $_SESSION['user']; ?></p>
         </div>
         <hr/>
-        <a href="logout.php" class="btn btn-danger float-right" id="move-right-more">Logout</a><a>.</a>
-        <div class="col-md-12 para-center" id="move-down-less">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Details</th>
-                        <th>Issue Date</th>
-                        <th>Category</th>
-                        <th>Status</th>
-                        <?php if($admin) { ?>
-                        <th>Change Status</th>
-                        <?php } ?>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php foreach($ticketArray as $ticket) { ?>
-                    <tr>
-                        <td><a href="details.php?ticketId=<?= $ticket->ticketId; ?>">Details</a></td>
-                        <td><?= $ticket->issueDate; ?></td>
-                        <td><?= $ticket->attributes()->category; ?></td>
-                        <?php
-                            if($ticket->attributes()->status=='open'){
-                                echo '<td id="open">' .$ticket->attributes()->status. '</td>';
-                            } else { echo '<td id="closed">' .$ticket->attributes()->status. '</td>'; }
-                        ?>
-                        <?php if($admin) { ?>
-                        <td>
-                            <form action="" method="POST">
-                                <input type="hidden" name="ticketId" value="<?= $ticket->ticketId; ?>">
-                                <select name="status" onclick="return false;">
-                                    <option value="open" <?= $ticket->status == "open" ? "selected" :"" ?>>open</option>
-                                    <option value="closed" <?= $ticket->status == "closed" ? "selected" :"" ?>>closed</option>
-                                </select>
-                                <input type="submit" value="Update Status" name="updatestatus" class="btn btn-default">
-                            </form>
-                        </td>
-                        <?php } ?>
-                    </tr>
-                <?php } ?>
-                </tbody>
-            </table>
+        <div class="contain">
+            <a href="logout.php" class="btn btn-danger float-right" id="move-right-more">Logout</a><a>.</a>
+            <div class="col-md-12 para-center" id="move-down-less">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Details</th>
+                            <th>Issue Date</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <?php if($admin) { ?>
+                            <th>Change Status</th>
+                            <?php } ?>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach($ticketArray as $ticket) { ?>
+                        <tr>
+                            <td><a href="details.php?ticketId=<?= $ticket->ticketId; ?>">Details</a></td>
+                            <td><?= $ticket->issueDate; ?></td>
+                            <td><?= $ticket->attributes()->category; ?></td>
+                            <?php
+                                if($ticket->attributes()->status=='open'){
+                                    echo '<td id="open">' .$ticket->attributes()->status. '</td>';
+                                } else { echo '<td id="closed">' .$ticket->attributes()->status. '</td>'; }
+                            ?>
+                            <?php if($admin) { ?>
+                            <td>
+                                <form action="" method="POST">
+                                    <input type="hidden" name="ticketId" value="<?= $ticket->ticketId; ?>">
+                                    <select name="status" onclick="return false;">
+                                        <option value="open" <?= $ticket->status == "open" ? "selected" :"" ?>>open</option>
+                                        <option value="closed" <?= $ticket->status == "closed" ? "selected" :"" ?>>closed</option>
+                                    </select>
+                                    <input type="submit" value="Update Status" name="updatestatus" class="btn btn-default">
+                                </form>
+                            </td>
+                            <?php } ?>
+                        </tr>
+                    <?php } ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </body>
     <?php include 'footer.php'?>

@@ -45,12 +45,15 @@ if(isset($_POST['login'])){
         <title>Login</title>
         <!--Links and Scripts-->
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="css/global.css" rel="stylesheet"/>
     </head>
     <body>
-        <h1>Login</h1>
+        <div class="top-wave"></div>
+        <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
         <hr/>
-        <div class="wrapper fadeInDown">
+        <div class="wrapper fadeInDown holder">
             <div class="formContent" id="centerContent">
                 <form action="" method="POST">
                     <div>
@@ -58,7 +61,7 @@ if(isset($_POST['login'])){
                     value="<?= isset($_POST['username'])? $_POST['username']: '';?>"/>
                     <input type="password" id="password" name="password" placeholder="password" 
                     value="<?= isset($_POST['username'])? $_POST['password']: '';?>"/>
-                    <input type="submit" name="login" class="btn-success" value="Login">
+                    <input type="submit" name="login" class="btn-access" value="Login">
                     <br/>
                     <span id="spanErrors"><?=$errorMsg?></span>
                     </div>
