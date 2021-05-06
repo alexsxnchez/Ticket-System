@@ -31,4 +31,5 @@ Client
 - Username: danc | Password: danc
 
 ![login view](readme-images/admin-list.PNG)
+![login view](readme-images/client-list.PNG)
 ![login view](readme-images/messages.PNG)
