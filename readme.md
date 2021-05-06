@@ -25,9 +25,10 @@
 
 #### Logins
 Admin
-- Username:emmy | Password:emmy
+- Username: emmy | Password: emmy
+
 Client
-- Username:danc | Password:danc
+- Username: danc | Password: danc
 
 ![login view](readme-images/admin-list.PNG)
 ![login view](readme-images/messages.PNG)
