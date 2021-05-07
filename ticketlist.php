@@ -63,7 +63,7 @@ if(isset($_SESSION['userid'])){
         <div class="contain">
             <a href="logout.php" class="btn btn-danger float-right" id="move-right-more">Logout</a><a>.</a>
             <div class="col-md-12 para-center" id="move-down-less">
-                <table class="table table-bordered">
+                <table class="table table-bordered s">
                     <thead>
                         <tr>
                             <th>Details</th>
