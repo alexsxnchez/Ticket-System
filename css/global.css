@@ -1,8 +1,13 @@
-body{
+html, body{
     width: 100%;
+    height: 100%;
 }
 h1, .para-center{
     text-align: center;
+}
+.middle{
+    align-items: center;
+    justify-items: center;
 }
 .top-wave{
     position: relative;
@@ -24,12 +29,12 @@ h1{
     color: red;
 }
 #centerContent{
+    margin: auto;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     flex-flow: column;
-    margin: 0 auto;
-    padding: 10% 0 10% 0;
+    padding: 17% 0 17% 0;
     width: 40%;
 }
 #move-right{
