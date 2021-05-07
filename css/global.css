@@ -5,10 +5,6 @@ html, body{
 h1, .para-center{
     text-align: center;
 }
-.middle{
-    align-items: center;
-    justify-items: center;
-}
 .top-wave{
     position: relative;
     width: 100%;
