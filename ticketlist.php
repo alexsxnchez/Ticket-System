@@ -51,11 +51,15 @@ if(isset($_SESSION['userid'])){
         <title>Ticket List</title>
         <!--Links and Scripts-->
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="css/global.css" rel="stylesheet"/>
     </head>
     <body>
+    <div class="top">
         <div class="top-wave"></div>
-        <h1>Tickets In The System</h1>
+        <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
+    </div>
         <div class="para-center">
             <p>Welcome Back <?= $_SESSION['user']; ?></p>
         </div>
@@ -78,16 +82,16 @@ if(isset($_SESSION['userid'])){
                     <tbody>
                     <?php foreach($ticketArray as $ticket) { ?>
                         <tr>
-                            <td><a href="details.php?ticketId=<?= $ticket->ticketId; ?>">Details</a></td>
-                            <td><?= $ticket->issueDate; ?></td>
-                            <td><?= $ticket->attributes()->category; ?></td>
+                            <td data-label="Details"><a href="details.php?ticketId=<?= $ticket->ticketId; ?>">Details</a></td>
+                            <td data-label="Issue Date"><?= $ticket->issueDate; ?></td>
+                            <td data-label="Category"><?= $ticket->attributes()->category; ?></td>
                             <?php
                                 if($ticket->attributes()->status=='open'){
-                                    echo '<td id="open">' .$ticket->attributes()->status. '</td>';
-                                } else { echo '<td id="closed">' .$ticket->attributes()->status. '</td>'; }
+                                    echo '<td data-label="Status" id="open">' .$ticket->attributes()->status. '</td>';
+                                } else { echo '<td data-label="Status" id="closed">' .$ticket->attributes()->status. '</td>'; }
                             ?>
                             <?php if($admin) { ?>
-                            <td>
+                            <td data-label="Change Status">
                                 <form action="" method="POST">
                                     <input type="hidden" name="ticketId" value="<?= $ticket->ticketId; ?>">
                                     <select name="status" onclick="return false;">

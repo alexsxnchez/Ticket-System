@@ -54,8 +54,10 @@ if(isset($_SESSION['userid'])){
         <link href="css/global.css" rel="stylesheet"/>
     </head>
     <body>
+    <div class="top">
         <div class="top-wave"></div>
         <h1>Ticket Messages</h1>
+    </div>
         <hr/>
         <div class="contain">
             <a href="ticketlist.php" class="btn btn-danger" id="move-right">Go Back</a>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tickets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <ticket status="closed" category="return">
+    <ticket status="open" category="return">
         <ticketId>591147</ticketId>
         <issueDate>2021-02-02</issueDate>
         <userId>4567</userId>

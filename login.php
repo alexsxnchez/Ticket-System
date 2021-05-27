@@ -50,8 +50,10 @@ if(isset($_POST['login'])){
         <link href="css/global.css" rel="stylesheet"/>
     </head>
     <body>
+    <div class="top">
         <div class="top-wave"></div>
         <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
+    </div>
         <hr/>
         <div class="wrapper fadeInDown holder">
             <div class="formContent" id="centerContent">
