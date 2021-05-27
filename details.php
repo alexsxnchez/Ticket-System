@@ -27,8 +27,9 @@ if(isset($_SESSION['userid'])){
                         //add new children/attributes to messages
                         $AddAttr = $ticket->messages->addChild("message", $_POST['message']);
                         $AddAttr->addAttribute("userId", $_SESSION['userid']);//Grab from stored user id
-                        $AddAttr->addAttribute("postedDate", date('Y-m-d'));
-                        $AddAttr->addAttribute("time", date("h:i:s A"));
+                        date_default_timezone_set("America/Toronto");
+                        $AddAttr->addAttribute("postedDate", date('Y-m-d'), );
+                        $AddAttr->addAttribute("time", date("h:i:sa"));
                         //save all inside the xml file
                         $ticketXML->saveXML("xml/tickets.xml");
                         false;
@@ -51,12 +52,14 @@ if(isset($_SESSION['userid'])){
         <title>Ticket Detail</title>
         <!--Links and Scripts-->
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="css/global.css" rel="stylesheet"/>
     </head>
     <body>
     <div class="top">
         <div class="top-wave"></div>
-        <h1>Ticket Messages</h1>
+        <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
     </div>
         <hr/>
         <div class="contain">

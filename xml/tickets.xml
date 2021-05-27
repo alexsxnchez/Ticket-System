@@ -8,9 +8,6 @@
             <message userId="4567" postedDate="2021-02-02" time="01:50:15 PM">Hi, I would like to return my order and get a refund.</message>
             <message userId="00123" postedDate="2021-02-02" time="02:00:40 PM">Hello, all return policies are listed on the footer of each page.</message>
             <message userId="4567" postedDate="2021-02-03" time="01:35:20 PM">Thank you!</message>
-            <message userId="00123" postedDate="2021-03-29" time="08:57:22 PM">Hello Sir - Testing</message>
-            <message userId="4567" postedDate="2021-03-29" time="08:59:07 PM">Hi - (tested) works!</message>
-            <message userId="00123" postedDate="2021-04-04" time="06:03:48 AM">works</message>
         </messages>
     </ticket>
     <ticket status="closed" category="purchase">
