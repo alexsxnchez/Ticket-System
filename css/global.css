@@ -90,6 +90,10 @@ h1, .para-center{
     background-color: coral;
     cursor: pointer;
 }
+.btn:hover{
+    background-color: coral;
+    color: white;
+}
 .contain{
     padding: 10px;
     position: relative;
@@ -190,7 +194,7 @@ table th {
         border-bottom: 0;
     }
     #move-right-more {
-        right: 30px;
+        right: 10px;
     }
     #move-right {
         right: 50px;

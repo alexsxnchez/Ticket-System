@@ -59,13 +59,13 @@ if(isset($_SESSION['userid'])){
     <div class="top">
         <div class="top-wave"></div>
         <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
+        <a href="logout.php" class="btn btn-danger float-right" id="move-right-more">Logout</a><a>.</a>
     </div>
         <div class="para-center">
             <p>Welcome Back <?= $_SESSION['user']; ?></p>
         </div>
         <hr/>
         <div class="contain">
-            <a href="logout.php" class="btn btn-danger float-right" id="move-right-more">Logout</a><a>.</a>
             <div class="col-md-12 para-center" id="move-down-less">
                 <table class="table table-bordered s">
                     <thead>
@@ -82,7 +82,7 @@ if(isset($_SESSION['userid'])){
                     <tbody>
                     <?php foreach($ticketArray as $ticket) { ?>
                         <tr>
-                            <td data-label="Details"><a href="details.php?ticketId=<?= $ticket->ticketId; ?>">Details</a></td>
+                            <td data-label="Details"><a href="details.php?ticketId=<?= $ticket->ticketId; ?>">Ticket Details</a></td>
                             <td data-label="Issue Date"><?= $ticket->issueDate; ?></td>
                             <td data-label="Category"><?= $ticket->attributes()->category; ?></td>
                             <?php

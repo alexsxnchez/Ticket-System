@@ -60,6 +60,7 @@ if(isset($_SESSION['userid'])){
     <div class="top">
         <div class="top-wave"></div>
         <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
+        <a href="logout.php" class="btn btn-danger float-right" id="move-right-more">Logout</a><a>.</a>
     </div>
         <hr/>
         <div class="contain">
