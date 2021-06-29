@@ -1,3 +1,3 @@
 <footer class="footer">
-    <p>&#169; Copyright : Alexis Arevalo - Support Ticket System</p>
+    <p>&#169; Alexis Arevalo - Support Ticket System - Class Project</p>
 </footer>
