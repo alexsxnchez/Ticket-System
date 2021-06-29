@@ -24,10 +24,10 @@ if(isset($_POST['login'])){
             //Once validated redirect the user to the 'ticketlist.php' page.
             header('Location: ticketlist.php');
         }
-        elseif(empty($_POST['username'])){
+        elseif(empty($username)){
             $errorMsg = "username must not be empty!";
         }
-        elseif(empty($_POST['password'])){
+        elseif(empty($password)){
             $errorMsg = "password must not be empty!";
         }
         else {
@@ -39,16 +39,7 @@ if(isset($_POST['login'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login</title>
-        <!--Links and Scripts-->
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
-        <link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="css/global.css" rel="stylesheet"/>
-    </head>
+    <?php include 'views/head.php'?>
     <body>
     <div class="top">
         <div class="top-wave"></div>
@@ -56,7 +47,7 @@ if(isset($_POST['login'])){
     </div>
         <hr/>
         <div class="wrapper fadeInDown holder">
-            <div class="formContent" id="centerContent">
+            <div class="formContent centerContent">
                 <form action="" method="POST">
                     <div>
                     <input type="text" id="username" name="username" placeholder="username" 
@@ -68,8 +59,9 @@ if(isset($_POST['login'])){
                     <span id="spanErrors"><?=$errorMsg?></span>
                     </div>
                 </form>
+                <a href="addUser.php" class="add-link">Create a new user</a>
             </div>
         </div>
     </body>
-    <?php include 'footer.php'?>
+    <?php include 'views/footer.php'?>
 </html>

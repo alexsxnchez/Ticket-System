@@ -38,6 +38,48 @@ if(isset($_SESSION['userid'])){
     }
 }
 
+if(isset($_POST['addticket'])){
+    
+    $category = $_POST['category'];
+    
+    if(empty($category)){
+        $errorMsg = "category must not be empty!";
+    }
+    else {
+        //Create DomDocument
+        $ticketXML = new DOMDocument();
+        //Formats new XML content
+        $ticketXML->preserveWhiteSpace = false;
+        $ticketXML->formatOutput = true;
+        //Loads XML file
+        $ticketXML->load("xml/tickets.xml");
+        //Create ticket child
+        $addTicket = $ticketXML->createElement('ticket');
+            //Set attributes status and category child within ticket
+            $addTicket->setAttribute('status', 'open');
+            $addTicket->setAttribute('category', $category);
+        //Create ticket id child
+        $addId = $ticketXML->createElement('ticketId', rand(100, 900000));
+        //Create issue date child
+        date_default_timezone_set("America/Toronto");
+        $addDate = $ticketXML->createElement('issueDate', date('Y-m-d'));
+        //Create user id child
+        $addUserId = $ticketXML->createElement('userId', $_SESSION['userid']);
+        //Create messages child
+        $addMessages = $ticketXML->createElement('messages');
+        //Append all elements
+        $addTicket->appendChild($addId);
+        $addTicket->appendChild($addDate);
+        $addTicket->appendChild($addUserId);
+        $addTicket->appendChild($addMessages);
+
+        $ticketXML->documentElement->appendChild($addTicket);
+        $ticketXML->save("xml/tickets.xml");
+
+        header('Location: ticketlist.php');
+    }
+}
+
 // echo '<pre>';
 // echo var_dump($tickets);
 // echo '</pre>';
@@ -45,16 +87,7 @@ if(isset($_SESSION['userid'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ticket List</title>
-        <!--Links and Scripts-->
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
-        <link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="css/global.css" rel="stylesheet"/>
-    </head>
+    <?php include 'views/head.php'?>
     <body>
     <div class="top">
         <div class="top-wave"></div>
@@ -98,16 +131,28 @@ if(isset($_SESSION['userid'])){
                                         <option value="open" <?= $ticket->status == "open" ? "selected" :"" ?>>open</option>
                                         <option value="closed" <?= $ticket->status == "closed" ? "selected" :"" ?>>closed</option>
                                     </select>
-                                    <input type="submit" value="Update Status" name="updatestatus" class="btn btn-default">
+                                    <input type="submit" value="Update Status" name="updatestatus" class="btr btn btn-default">
                                 </form>
                             </td>
-                            <?php } ?>
+                            <?php } ?>  
                         </tr>
                     <?php } ?>
                     </tbody>
                 </table>
             </div>
+            <?php if(!$admin) { ?>
+                <div class="contentCenter box-layout">
+                    <form action="" method="POST" class="add-form">
+                        <p>Fill in the field to create a new ticket</p>
+                        <label>Category <span class="asterisk">&ast;</span></label>
+                        <input type="text" name="category" value="<?= isset($category)? $category : '';?>"/><br/>
+                        <input type="submit" class="btn btn-access" id="text-submit" name="addticket" value="Create a new ticket">
+                        <br/>
+                        <span id="spanErrors"><?= isset($errorMsg)? $errorMsg : ''; ?></span>
+                    </form>
+                </div>
+            <?php } ?>  
         </div>
     </body>
-    <?php include 'footer.php'?>
+    <?php include 'views/footer.php'?>
 </html>

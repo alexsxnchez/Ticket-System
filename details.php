@@ -25,10 +25,10 @@ if(isset($_SESSION['userid'])){
                     $ticketInfo = $ticket;
                     if(isset($_POST['addmessage'])) {
                         //add new children/attributes to messages
-                        $AddAttr = $ticket->messages->addChild("message", $_POST['message']);
+                        $AddAttr = $ticket->messages->createElement("message", $_POST['message']);
                         $AddAttr->addAttribute("userId", $_SESSION['userid']);//Grab from stored user id
                         date_default_timezone_set("America/Toronto");
-                        $AddAttr->addAttribute("postedDate", date('Y-m-d'), );
+                        $AddAttr->addAttribute("postedDate", date('Y-m-d'));
                         $AddAttr->addAttribute("time", date("h:i:sa"));
                         //save all inside the xml file
                         $ticketXML->saveXML("xml/tickets.xml");
@@ -45,17 +45,8 @@ if(isset($_SESSION['userid'])){
 
 ?>
 <!DOCTYPE html>
-<html  lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ticket Detail</title>
-        <!--Links and Scripts-->
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
-        <link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="css/global.css" rel="stylesheet"/>
-    </head>
+<html lang="en">
+    <?php include 'views/head.php'?>
     <body>
     <div class="top">
         <div class="top-wave"></div>
@@ -77,15 +68,17 @@ if(isset($_SESSION['userid'])){
                     </div> 
                 <?php } }?>
                 <?php if(((string) $ticketInfo->userId == (string) $userInfo->userId) || $admin) { ?>
+                <?php if($ticketInfo->attributes()->status == 'open'){ ?>
                 <div class="para-center text-submit">
                     <form action="" method="POST">
                         <textarea class="message-box" name="message" rows="4" cols="50" required></textarea><br/>
                         <input type="submit" class="btn btn-primary" id="text-submit" name="addmessage" value="Post">
                     </form>
                 </div>
+                <?php } else {echo '<div style="padding: 50px;"></div>';} ?>
             </div>
             <?php } ?>
         </div>
     </body>
-    <?php include 'footer.php'?>
+    <?php include 'views/footer.php'?>
 </html>

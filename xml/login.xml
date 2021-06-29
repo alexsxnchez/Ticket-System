@@ -1,39 +1,44 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<login xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><!--Several Users - login-->
-    <user type="client"><!--Client-->
-        <userId>4567</userId><!--Fixed upper case Type...Elements must be consistent-->
-        <name>
-            <first>Daniel</first>
-            <last>Cooke</last>
-        </name>
-        <username>danc</username>
-        <password>
-            <encrypted>07626edd86b96b997c3737a71934075a</encrypted><!--Md5(danc)-->
-        </password>
-        <email>danc@example.com</email>
-    </user>
-    <user type="admin"><!--Admin-->
-        <userId>00123</userId>
-        <name>
-            <first>Emily</first>
-            <last>Younge</last>
-        </name>
-        <username>emmy</username>
-        <password>
-            <encrypted>8a74cdd9f34548a005a6952504f991ad</encrypted><!--Md5(emmy)-->
-        </password>
-        <email>emmy@example.com</email>
-    </user>
-    <user type="client"><!--Admin-->
-        <userId>4667</userId>
-        <name>
-            <first>Susan</first>
-            <last>Rush</last>
-        </name>
-        <username>susanr</username>
-        <password>
-            <encrypted>7faa56f7919348432b5e3189c263d6c0</encrypted><!--Md5(susanr)-->
-        </password>
-        <email>susanr@example.com</email>
-    </user>
+<?xml version="1.0" encoding="utf-8"?>
+<login xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--Several Users - login-->
+  <user type="client">
+    <!--Client-->
+    <userId>4567</userId>
+    <!--Fixed upper case Type...Elements must be consistent-->
+    <name>
+      <first>Daniel</first>
+      <last>Cooke</last>
+    </name>
+    <username>danc</username>
+    <password>
+      <encrypted>07626edd86b96b997c3737a71934075a</encrypted><!--Md5(danc)-->
+    </password>
+    <email>danc@example.com</email>
+  </user>
+  <user type="admin">
+    <!--Admin-->
+    <userId>00123</userId>
+    <name>
+      <first>Emily</first>
+      <last>Younge</last>
+    </name>
+    <username>emmy</username>
+    <password>
+      <encrypted>8a74cdd9f34548a005a6952504f991ad</encrypted><!--Md5(emmy)-->
+    </password>
+    <email>emmy@example.com</email>
+  </user>
+  <user type="client">
+    <!--Client-->
+    <userId>4667</userId>
+    <name>
+      <first>Susan</first>
+      <last>Rush</last>
+    </name>
+    <username>susanr</username>
+    <password>
+      <encrypted>21e59a2878f322cc4075b99fcce659eb</encrypted><!--Md5(susanr)-->
+    </password>
+    <email>susanr@example.com</email>
+  </user>
 </login>
