@@ -42,7 +42,7 @@ if(isset($_POST['addticket'])){
     
     $category = $_POST['category'];
     
-    if(empty($category)){
+    if(empty($category) || $category == 'ex. return'){
         $errorMsg = "category must not be empty!";
     }
     else {
@@ -145,7 +145,7 @@ if(isset($_POST['addticket'])){
                     <form action="" method="POST" class="add-form">
                         <p>Fill in the field to create a new ticket</p>
                         <label>Category <span class="asterisk">&ast;</span></label>
-                        <input type="text" name="category" value="<?= isset($category)? $category : '';?>"/><br/>
+                        <input type="text" name="category" value="<?= isset($category)? $category : '';?>" placeholder="ex. return"/><br/>
                         <input type="submit" class="btn btn-access" id="text-submit" name="addticket" value="Create a new ticket">
                         <br/>
                         <span id="spanErrors"><?= isset($errorMsg)? $errorMsg : ''; ?></span>

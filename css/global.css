@@ -52,7 +52,6 @@ h1, .para-center{
     margin: auto;
     text-align: center;
     padding: 2% 0 2% 0;
-    width: 600px;
     /* background-color: rgb(212, 206, 202);
     border-radius: 3px; */
     /*clip-path: polygon(0% 0%, 19% 9.8%, 19.5% 9.95%, 20% 10%, 100% 0%, 100% 100%, 80% 90%, 79.5% 89.95%, 79% 89.8%, 0% 100%);/*horizontal/verticle*/
@@ -182,8 +181,8 @@ table th {
 }
 .add-form label{
     /* placing all <label> elements in the grid column 1 (the first): */
-  /* aligning text-content to the right in order to position the label
-     text near to the relevant <input>: */
+    /* aligning text-content to the right in order to position the label
+    text near to the relevant <input>: */
     text-align: right;
 }
 .add-form input {
@@ -244,6 +243,7 @@ table th {
     }
     #move-right-more {
         right: 10px;
+        top: 100px;
     }
     #move-right {
         right: 50px;

@@ -25,14 +25,17 @@ if(isset($_SESSION['userid'])){
                     $ticketInfo = $ticket;
                     if(isset($_POST['addmessage'])) {
                         //add new children/attributes to messages
-                        $AddAttr = $ticket->messages->createElement("message", $_POST['message']);
+                        $AddAttr = $ticket->messages->addChild("message", $_POST['message']);
                         $AddAttr->addAttribute("userId", $_SESSION['userid']);//Grab from stored user id
                         date_default_timezone_set("America/Toronto");
                         $AddAttr->addAttribute("postedDate", date('Y-m-d'));
                         $AddAttr->addAttribute("time", date("h:i:sa"));
+                        
                         //save all inside the xml file
                         $ticketXML->saveXML("xml/tickets.xml");
                         false;
+
+                        header("Location: details.php?ticketId=$ticket->ticketId");
                     }  
                 }
             }
