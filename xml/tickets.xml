@@ -20,10 +20,12 @@
       <message userId="4667" postedDate="2021-02-04" time="02:35:20 PM">Oh okay thats fine then Thank you.</message>
     </messages>
   </ticket>
-  <ticket status="open" category="buy">
+  <ticket status="open" category="item not recieved">
     <ticketId>419212</ticketId>
     <issueDate>2021-06-29</issueDate>
     <userId>4567</userId>
-    <messages/>
+    <messages>
+      <message userId="4567" postedDate="2021-06-29" time="01:14:48pm">Hello, I was wondering when my item will arrive. I ordered it 30 days ago.</message>
+    </messages>
   </ticket>
 </tickets>
