@@ -23,6 +23,7 @@ if(isset($_POST['login'])){
             $_SESSION['userid'] = (string) $user->userId;
             //Once validated redirect the user to the 'ticketlist.php' page.
             header('Location: ticketlist.php');
+            exit;
         }
         elseif(empty($username)){
             $errorMsg = "username must not be empty!";
@@ -41,18 +42,17 @@ if(isset($_POST['login'])){
 <html lang="en">
     <?php include 'views/head.php'?>
     <body>
-    <div class="top">
-        <div class="top-wave"></div>
-        <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
-    </div>
-        <hr/>
-        <div class="wrapper fadeInDown holder">
+        <div class="top">
+            <div class="top-wave"></div>
+            <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
+        </div>
+        <div class="page__container">
             <div class="formContent centerContent">
-                <form action="" method="POST">
+                <form action="" method="POST" class="add-form">
                     <div>
-                    <input type="text" id="username" name="username" placeholder="username" 
+                    <input type="text" name="username" placeholder="username" 
                     value="<?= isset($_POST['username'])? $_POST['username']: '';?>"/>
-                    <input type="password" id="password" name="password" placeholder="password" 
+                    <input type="password" name="password" placeholder="password" 
                     value="<?= isset($_POST['username'])? $_POST['password']: '';?>"/>
                     <input type="submit" name="login" class="btn-access" value="Login">
                     <br/>

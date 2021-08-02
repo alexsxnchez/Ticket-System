@@ -93,12 +93,11 @@ if(isset($_POST['adduser'])){
 <html>
     <?php include 'views/head.php'?>
     <body>
-    <div class="top">
-        <div class="top-wave"></div>
-        <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
-        <a href="login.php" class="btn btn-danger float-right" id="move-right-more">Go Back</a><a>.</a>
-    </div>
-        <hr/>
+        <div class="top">
+            <div class="top-wave"></div>
+            <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
+            <a href="login.php" class="top__btn">Go Back</a>
+        </div>
         <div class="contentCenter box-layout">
             <form action="" method="POST" class="add-form">
                 <!-- <div id="radio-selection">

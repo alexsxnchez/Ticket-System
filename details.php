@@ -51,12 +51,11 @@ if(isset($_SESSION['userid'])){
 <html lang="en">
     <?php include 'views/head.php'?>
     <body>
-    <div class="top">
-        <div class="top-wave"></div>
-        <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
-        <a href="logout.php" class="btn btn-danger float-right" id="move-right-more">Logout</a><a>.</a>
-    </div>
-        <hr/>
+        <div class="top">
+            <div class="top-wave"></div>
+            <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
+            <a href="logout.php" class="top__btn">Logout</a><a>.</a>
+        </div>
         <div class="contain">
             <a href="ticketlist.php" class="btn btn-danger" id="move-right">Go Back</a>
             <div class="col-md-12" id="move-down">

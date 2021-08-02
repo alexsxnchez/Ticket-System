@@ -33,6 +33,6 @@ Admin
 Client
 - Username: danc | Password: danc
 
-![login view](readme-images/admin-list.PNG)
-![login view](readme-images/client-list.PNG)
-![login view](readme-images/messages.PNG)
+![login view](images/readme-images/admin-list.PNG)
+![login view](images/readme-images/client-list.PNG)
+![login view](images/readme-images/messages.PNG)

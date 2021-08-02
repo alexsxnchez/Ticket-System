@@ -92,12 +92,11 @@ if(isset($_POST['addticket'])){
     <div class="top">
         <div class="top-wave"></div>
         <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
-        <a href="logout.php" class="btn btn-danger float-right" id="move-right-more">Logout</a><a>.</a>
+        <a href="logout.php" class="top__btn">Logout</a><a>.</a>
     </div>
         <div class="para-center">
             <p>Welcome Back <?= $_SESSION['user']; ?></p>
         </div>
-        <hr/>
         <div class="contain">
             <div class="col-md-12 para-center" id="move-down-less">
                 <table class="table table-bordered s">
