@@ -71,7 +71,6 @@ h1, .para-center {
     color: red;
 }
 .page__container {
-    height: 80.5vh;
     width: 100%;
 }
 /*Login center out*/
@@ -80,7 +79,7 @@ h1, .para-center {
     display: flex;
     flex-wrap: nowrap;
     flex-flow: column;
-    padding: 10% 0;
+    padding: 11% 0;
 }
 .box-layout {
     margin: auto;
