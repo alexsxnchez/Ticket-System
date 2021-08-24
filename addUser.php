@@ -110,16 +110,26 @@ if(isset($_POST['adduser'])){
                     <?php ?><!--Check for user type--
                 </div>-->
                 <p>Fields marked with an <span class="asterisk">&ast;</span> are required</p>
-                <label>First Name <span class="asterisk">&ast;</span></label>
-                <input type="text" name="firstname" value="<?= isset($firstname)? $firstname : '';?>"/><br/>
-                <label>Last Name <span class="asterisk">&ast;</span></label>
-                <input type="text" name="lastname" value="<?= isset($lastname)? $lastname : '';?>"/><br/>
-                <label>Userame <span class="asterisk">&ast;</span></label>
-                <input type="text" name="username" value="<?= isset($username)? $username : '';?>"/><br/>
-                <label>Email <span class="asterisk">&ast;</span></label>
-                <input type="text" name="email" value="<?= isset($email)? $email : '';?>"/><br/>
-                <label>Password <span class="asterisk">&ast;</span></label>
-                <input type="password" name="password" value="<?= isset($password)? $password : '';?>"/><br/>
+                <div>
+                    <input type="text" name="firstname" value="<?= isset($firstname)? $firstname : '';?>" 
+                    placeholder="First Name"/> <span class="asterisk">&ast;</span>
+                </div>
+                <div>
+                    <input type="text" name="lastname" value="<?= isset($lastname)? $lastname : '';?>" 
+                    placeholder="Last Name"/> <span class="asterisk">&ast;</span>
+                </div>
+                <div>
+                    <input type="text" name="username" value="<?= isset($username)? $username : '';?>"
+                    placeholder="Username"/> <span class="asterisk">&ast;</span>
+                </div>
+                <div>
+                    <input type="text" name="email" value="<?= isset($email)? $email : '';?>"
+                    placeholder="Email"/> <span class="asterisk">&ast;</span>
+                </div>
+                <div>
+                    <input type="password" name="password" value="<?= isset($password)? $password : '';?>"
+                    placeholder="Password"/> <span class="asterisk">&ast;</span>
+                </div>
                 <input type="submit" class="btn btn-access" id="text-submit" name="adduser" value="Register">
                 <br/>
                 <span id="spanErrors"><?= isset($errorMsg)? $errorMsg : ''; ?></span>

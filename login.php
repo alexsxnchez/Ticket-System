@@ -59,7 +59,7 @@ if(isset($_POST['login'])){
                     <span id="spanErrors"><?=$errorMsg?></span>
                     </div>
                 </form>
-                <a href="addUser.php" class="add-link">Create a new user</a>
+                <a href="addUser.php" class="add-link">Create A New User</a>
             </div>
         </div>
     </body>
