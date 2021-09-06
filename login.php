@@ -41,25 +41,32 @@ if(isset($_POST['login'])){
 <!DOCTYPE html>
 <html lang="en">
     <?php include 'views/head.php'?>
-    <body>
+    <body data-theme="">
+        <div class="dark-mode">
+            <input type="checkbox" name="" id="btn"/>
+            <div class="mode-box">
+                <i class="fa fa-adjust"></i>
+                <i class="fa fa-adjust"></i>
+            </div>
+        </div>
         <div class="top">
             <div class="top-wave"></div>
             <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
         </div>
         <div class="page__container">
-            <div class="formContent centerContent">
+            <div class=" centerContent">
                 <form action="" method="POST" class="add-form">
                     <div>
                     <input type="text" name="username" placeholder="username" 
                     value="<?= isset($_POST['username'])? $_POST['username']: '';?>"/>
                     <input type="password" name="password" placeholder="password" 
                     value="<?= isset($_POST['username'])? $_POST['password']: '';?>"/>
-                    <input type="submit" name="login" class="btn-access" value="Login">
+                    <input type="submit" name="login" class="correct__btn" value="Login">
                     <br/>
-                    <span id="spanErrors"><?=$errorMsg?></span>
+                    <span class="errors__mandate"><?=$errorMsg?></span>
                     </div>
                 </form>
-                <a href="addUser.php" class="add-link">Create A New User</a>
+                <a href="addUser.php" class="correct__btn">Create A New User</a>
             </div>
         </div>
     </body>

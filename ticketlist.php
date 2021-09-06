@@ -88,17 +88,24 @@ if(isset($_POST['addticket'])){
 <!DOCTYPE html>
 <html lang="en">
     <?php include 'views/head.php'?>
-    <body>
+    <body data-theme="">
+        <div class="dark-mode">
+            <input type="checkbox" name="" id="btn"/>
+            <div class="mode-box">
+                <i class="fa fa-adjust"></i>
+                <i class="fa fa-adjust"></i>
+            </div>
+        </div>
     <div class="top">
         <div class="top-wave"></div>
         <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
-        <a href="logout.php" class="top__btn">Logout</a><a>.</a>
+        <a href="logout.php" class="wrong__btn">Logout</a>
     </div>
         <div class="para-center">
-            <p>Welcome Back <?= $_SESSION['user']; ?></p>
+            <p class="changer">Welcome Back <?= $_SESSION['user']; ?></p>
         </div>
         <div class="contain">
-            <div class="col-md-12 para-center" id="move-down-less">
+            <div class="col-md-11 para-center" id="move-down-less">
                 <table class="table table-bordered s">
                     <thead>
                         <tr>
@@ -130,7 +137,7 @@ if(isset($_POST['addticket'])){
                                         <option value="open" <?= $ticket->status == "open" ? "selected" :"" ?>>open</option>
                                         <option value="closed" <?= $ticket->status == "closed" ? "selected" :"" ?>>closed</option>
                                     </select>
-                                    <input type="submit" value="Update Status" name="updatestatus" class="btr btn btn-default">
+                                    <input type="submit" value="Update Status" name="updatestatus" class="update__btn">
                                 </form>
                             </td>
                             <?php } ?>  
@@ -142,12 +149,12 @@ if(isset($_POST['addticket'])){
             <?php if(!$admin) { ?>
                 <div class="contentCenter box-layout">
                     <form action="" method="POST" class="add-form">
-                        <p>Fill in the field to create a new ticket</p>
-                        <label>Category <span class="asterisk">&ast;</span></label>
+                        <p class="changer">Fill in the field to create a new ticket</p>
+                        <label class="changer">Category <span class="errors__mandate">&ast;</span></label>
                         <input type="text" name="category" value="<?= isset($category)? $category : '';?>" placeholder="ex. return"/><br/>
-                        <input type="submit" class="btn btn-access" id="text-submit" name="addticket" value="Create a new ticket">
+                        <input type="submit" class="correct__btn" id="text-submit" name="addticket" value="Create a new ticket">
                         <br/>
-                        <span id="spanErrors"><?= isset($errorMsg)? $errorMsg : ''; ?></span>
+                        <span class="errors__mandate"><?= isset($errorMsg)? $errorMsg : ''; ?></span>
                     </form>
                 </div>
             <?php } ?>  

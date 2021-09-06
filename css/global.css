@@ -5,9 +5,39 @@
 html, body {
     width: 100%;
     height: 100%;
+    background: var(--background);
+}
+body {
+    --background: #fff;
+    --primary-color: #f48c06;
+    --dark: #219ebc;
+    --color: #000;
+    --correct-btn: #2aab68;
+    --wrong-btn: #dc3545;
+    --update-btn: rgb(255, 151, 113);
+
+    --hover-correct-btn: #21804e;
+    --hover-wrong-btn: #a72a36;
+    --hover-update-btn: coral;
+    --th-color: rgb(253, 223, 201);
+}
+body[data-theme="dark"]{
+    --background: #000;
+    --primary-color: #219ebc;
+    --dark: #f48c06;
+    --color: #fff;
+    --correct-btn: #28a745;
+    --wrong-btn: #dc3545;
+    --update-btn: #147e9f;
+
+    --hover-correct-btn: #1f8837;
+    --hover-wrong-btn: #c72d3d;;
+    --hover-update-btn: #126782;
+    --th-color: #81a5b1;
 }
 h1, .para-center {
     text-align: center;
+    margin: auto;
 }
 /*Main Title an wave*/
 .top {
@@ -17,7 +47,7 @@ h1, .para-center {
 .top > .top-wave {
     width: 100%;
     height: 70px;
-    background: #f48c06;
+    background: var(--primary-color);
     clip-path: polygon(100% 0%, 0% 0% , 0% 65%, 1% 64.95%, 2% 64.8%, 3% 64.6%, 4% 64.3%, 5% 63.9%, 6% 63.45%, 7% 62.9%, 8% 62.25%, 9% 61.55%, 10% 60.8%, 11% 59.95%, 12% 59.05%, 13% 58.1%, 14% 57.1%, 15% 56.05%, 16% 55%, 17% 53.9%, 18% 52.8%, 19% 51.65%, 20% 50.5%, 21% 49.35%, 22% 48.2%, 23% 47.05%, 24% 45.9%, 25% 44.8%, 26% 43.75%, 27% 42.75%, 28% 41.75%, 29% 40.8%, 30% 39.9%, 31% 39.1%, 32% 38.35%, 33% 37.65%, 34% 37.05%, 35% 36.5%, 36% 36.05%, 37% 35.65%, 38% 35.35%, 39% 35.15%, 40% 35.05%, 41% 35%, 42% 35.05%, 43% 35.2%, 44% 35.45%, 45% 35.75%, 46% 36.15%, 47% 36.65%, 48% 37.2%, 49% 37.85%, 50% 38.55%, 51% 39.35%, 52% 40.2%, 53% 41.1%, 54% 42.05%, 55% 43.05%, 56% 44.1%, 57% 45.15%, 58% 46.3%, 59% 47.4%, 60% 48.55%, 61% 49.7%, 62% 50.85%, 63% 52%, 64% 53.15%, 65% 54.25%, 66% 55.35%, 67% 56.4%, 68% 57.45%, 69% 58.4%, 70% 59.35%, 71% 60.2%, 72% 61.05%, 73% 61.8%, 74% 62.45%, 75% 63.05%, 76% 63.6%, 77% 64.05%, 78% 64.4%, 79% 64.7%, 80% 64.85%, 81% 65%, 82% 65%, 83% 64.9%, 84% 64.75%, 85% 64.5%, 86% 64.2%, 87% 63.75%, 88% 63.25%, 89% 62.7%, 90% 62.05%, 91% 61.3%, 92% 60.5%, 93% 59.65%, 94% 58.75%, 95% 57.8%, 96% 56.8%, 97% 55.75%, 98% 54.65%, 99% 53.55%, 100% 52.4%);
     position: absolute;
     top: 0;
@@ -26,20 +56,20 @@ h1, .para-center {
 }
 .top > h1 {
     margin: auto;
-    color: black;
+    color: var(--color);
     font-size: 30pt;
     width: 100%;
     z-index: 1;
     padding: 8px 20px 20px 20px;
 }
-.top__btn {
+/* Buttons */
+.correct__btn {
     cursor: pointer;
-    position: absolute;
     top: calc(50% - 20px);
     right: 80px;
     color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545;
+    background-color: var(--correct-btn);
+    border-color: var(--correct-btn);
     display: inline-block;
     font-weight: 400;
     text-align: center;
@@ -57,17 +87,84 @@ h1, .para-center {
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-.top__btn:hover {
+.correct__btn:hover {
     text-decoration: none;
     color: #fff;
-    background-color: #c72d3d;
+    background-color: var(--hover-correct-btn);
 }
-/*All appointed errors*/
-#spanErrors {
+.wrong__btn {
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - 20px);
+    right: 50px;
+    color: #fff;
+    background-color: var(--wrong-btn);
+    border-color: var(--wrong-btn);
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.wrong__btn:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--hover-wrong-btn);
+}
+.update__btn {
+    cursor: pointer;
+    top: calc(50% - 20px);
+    right: 80px;
+    color: #fff;
+    background-color: var(--update-btn);
+    border-color: var(--update-btn);
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.update__btn:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--hover-update-btn);
+}
+
+
+/*All appointed errors*//*Must fill in 'asterisk'*/
+.errors__mandate {
     color: red;
 }
-/*Must fill in 'asterisk'*/
-.asterisk {
+.changer {
+    color: var(--color);
+}
+/*status changers*/
+#open {
+    color: rgb(5, 182, 5);
+}
+#closed {
     color: red;
 }
 .page__container {
@@ -76,9 +173,6 @@ h1, .para-center {
 /*Login center out*/
 .centerContent {
     text-align: center;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-flow: column;
     padding: 11% 0;
 }
 .box-layout {
@@ -89,7 +183,47 @@ h1, .para-center {
     border-radius: 3px; */
     /*clip-path: polygon(0% 0%, 19% 9.8%, 19.5% 9.95%, 20% 10%, 100% 0%, 100% 100%, 80% 90%, 79.5% 89.95%, 79% 89.8%, 0% 100%);/*horizontal/verticle*/
 }
-/*Red buttons*/
+
+
+/*Dark Mode*/
+.dark-mode {
+    width: 100px;
+    height: 50px;
+    position: fixed;
+    top: 0; 
+    bottom: 0;
+    margin: auto;
+    left: -5px;
+    transform: translate(-50%);
+    border-radius: 30px;
+    background: var(--dark);
+    color: white;
+    overflow: hidden;
+    z-index: 1;
+}
+.dark-mode .mode-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--dark);
+    color: white;
+    transition: all .4s;
+}
+.dark-mode input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    cursor: pointer;
+    z-index: 10;
+}
+.dark-mode input:checked ~ .mode-box {
+    transform: rotate(180deg);
+}
+
 #move-right {
     cursor: pointer;
     position: absolute;
@@ -108,49 +242,13 @@ h1, .para-center {
 #move-down-less {
     margin-top: 40px;
 }
-/*status changers*/
-#open {
-    color: rgb(5, 182, 5);
-}
-#closed {
-    color: red;
-}
-#text-submit {
-    padding: 5px 50px 5px 50px;
-}
-.text-submit {
+.text__submit {
     padding: 10px 0 20px 0;
-}
-/*Styiling Overall*/
-.btn-access {
-    color: #fff;
-    padding: 5px 10px 5px 10px;
-    border-radius: 10px;
-    background-color: #28a745;
-    border: none;
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
-.message-box {
-    width: 500px;
-}
-.btn-access:hover {
-    background-color: coral;
-    border: none;
-    cursor: pointer;
-}
-.btr:hover {
-    background-color: coral;
-    color: white;
 }
 .contain {
     padding: 10px;
     position: relative;
-}
-th {
-    background: rgb(253, 223, 201);
+    z-index: 0;
 }
 table  {
     border: 1px solid #ccc;
@@ -165,7 +263,9 @@ table tr  {
     border: 1px solid #ddd;
     padding: .35em;
 }
-
+th {
+    background: var(--th-color);
+}
 table th,
 table td  {
     padding: .625em;
@@ -180,9 +280,12 @@ table th  {
 .fa-comment-check {
     color: black;
 }
-.message-prompt {
+.message__box {
+    width: 500px;
+}
+.message__prompt {
     width: 90%;
-    background-color: rgb(253, 223, 201);
+    background-color: var(--th-color);
     margin: auto;
     border-radius: 10px;
 }
@@ -228,7 +331,7 @@ table th  {
     text-decoration: none;
 }
 .footer {
-    background: #f48c06;
+    background: var(--primary-color);
     padding: 10px;
     color: white;
     width: 100%;
@@ -243,7 +346,7 @@ table th  {
     .top__btn {
         right: 20px;
     }
-    .message-box {
+    .message__box {
         width: 260px;
     }
     table  {
@@ -298,5 +401,9 @@ table th  {
 @media only screen and (max-width: 400px) {
     .btr  {
         width: 100%;
+    }
+    .wrong__btn {
+        top: calc(70% - 20px);
+        right: 15px;
     }
 }

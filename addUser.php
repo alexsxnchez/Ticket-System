@@ -92,11 +92,18 @@ if(isset($_POST['adduser'])){
 <!DOCTYPE html>
 <html>
     <?php include 'views/head.php'?>
-    <body>
+    <body data-theme="">
+        <div class="dark-mode">
+            <input type="checkbox" name="" id="btn"/>
+            <div class="mode-box">
+                <i class="fa fa-adjust"></i>
+                <i class="fa fa-adjust"></i>
+            </div>
+        </div>
         <div class="top">
             <div class="top-wave"></div>
             <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
-            <a href="login.php" class="top__btn">Go Back</a>
+            <a href="login.php" class="wrong__btn">Go Back</a>
         </div>
         <div class="contentCenter box-layout">
             <form action="" method="POST" class="add-form">
@@ -109,30 +116,30 @@ if(isset($_POST['adduser'])){
                     <label for="type-admin">Admin</label>
                     <?php ?><!--Check for user type--
                 </div>-->
-                <p>Fields marked with an <span class="asterisk">&ast;</span> are required</p>
+                <p class="changer">Fields marked with an <span class="errors__mandate">&ast;</span> are required</p>
                 <div>
                     <input type="text" name="firstname" value="<?= isset($firstname)? $firstname : '';?>" 
-                    placeholder="First Name"/> <span class="asterisk">&ast;</span>
+                    placeholder="First Name"/> <span class="errors__mandate">&ast;</span>
                 </div>
                 <div>
                     <input type="text" name="lastname" value="<?= isset($lastname)? $lastname : '';?>" 
-                    placeholder="Last Name"/> <span class="asterisk">&ast;</span>
+                    placeholder="Last Name"/> <span class="errors__mandate">&ast;</span>
                 </div>
                 <div>
                     <input type="text" name="username" value="<?= isset($username)? $username : '';?>"
-                    placeholder="Username"/> <span class="asterisk">&ast;</span>
+                    placeholder="Username"/> <span class="errors__mandate">&ast;</span>
                 </div>
                 <div>
                     <input type="text" name="email" value="<?= isset($email)? $email : '';?>"
-                    placeholder="Email"/> <span class="asterisk">&ast;</span>
+                    placeholder="Email"/> <span class="errors__mandate">&ast;</span>
                 </div>
                 <div>
                     <input type="password" name="password" value="<?= isset($password)? $password : '';?>"
-                    placeholder="Password"/> <span class="asterisk">&ast;</span>
+                    placeholder="Password"/> <span class="errors__mandate">&ast;</span>
                 </div>
-                <input type="submit" class="btn btn-access" id="text-submit" name="adduser" value="Register">
+                <input type="submit" class="correct__btn" id="text-submit" name="adduser" value="Register">
                 <br/>
-                <span id="spanErrors"><?= isset($errorMsg)? $errorMsg : ''; ?></span>
+                <span class="errors__mandate"><?= isset($errorMsg)? $errorMsg : ''; ?></span>
             </form>
         </div>
     </body>
