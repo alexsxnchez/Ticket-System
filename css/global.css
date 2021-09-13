@@ -321,6 +321,10 @@ table th  {
     border-radius: 3px;
     margin: 10px 0;
 }
+input {
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
 .add-form input[type=submit]  {
     /* positioning the <button> element in the grid-area identified
        by the name of 'submit': */
