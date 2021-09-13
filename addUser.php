@@ -102,8 +102,10 @@ if(isset($_POST['adduser'])){
         </div>
         <div class="top">
             <div class="top-wave"></div>
-            <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
-            <a href="login.php" class="wrong__btn">Go Back</a>
+            <div class="seperate">
+                <h1 class="add-left"><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
+                <a href="login.php" class="wrong__btn">Go Back</a>
+            </div>
         </div>
         <div class="contentCenter box-layout">
             <form action="" method="POST" class="add-form">

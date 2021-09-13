@@ -62,6 +62,14 @@ h1, .para-center {
     z-index: 1;
     padding: 8px 20px 20px 20px;
 }
+.seperate {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: flex-end;
+}
+.add-left {
+    padding-left: 100px;
+}
 /* Buttons */
 .correct__btn {
     cursor: pointer;
@@ -94,9 +102,8 @@ h1, .para-center {
 }
 .wrong__btn {
     cursor: pointer;
-    position: absolute;
-    top: calc(50% - 20px);
-    right: 50px;
+    margin: 10px;
+    margin-right: 50px;
     color: #fff;
     background-color: var(--wrong-btn);
     border-color: var(--wrong-btn);
@@ -228,7 +235,7 @@ h1, .para-center {
     cursor: pointer;
     position: absolute;
     top: 10px;
-    right: 80px;
+    right: 0;
 }
 #move-right-more {
     cursor: pointer;
@@ -394,20 +401,18 @@ input {
         right: 10px;
         top: 60px;
     }
-    #move-right  {
-        right: 50px;
-    }
     .btr  {
         background-color: rgb(255, 151, 113);
         color: white;
     }
 }
+@media only screen and (max-width: 680px) {
+    .add-left {
+        padding-left: 0;
+    }
+}
 @media only screen and (max-width: 400px) {
     .btr  {
         width: 100%;
-    }
-    .wrong__btn {
-        top: calc(70% - 20px);
-        right: 15px;
     }
 }

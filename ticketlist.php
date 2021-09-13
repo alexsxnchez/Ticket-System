@@ -98,8 +98,10 @@ if(isset($_POST['addticket'])){
         </div>
     <div class="top">
         <div class="top-wave"></div>
-        <h1><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
-        <a href="logout.php" class="wrong__btn">Logout</a>
+        <div class="seperate">
+            <h1 class="add-left"><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
+            <a href="logout.php" class="wrong__btn">Logout</a>
+        </div>
     </div>
         <div class="para-center">
             <p class="changer">Welcome Back <?= $_SESSION['user']; ?></p>
