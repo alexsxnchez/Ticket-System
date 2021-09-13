@@ -52,7 +52,7 @@ if(isset($_POST['login'])){
         <div class="top">
             <div class="top-wave"></div>
             <div class="seperate">
-                <h1 class="para-center"><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
+                <h1 class="color"><i class="fa fa-comments"></i> Support Ticket Sytem</h1>
             </div>
         </div>
         <div class="page__container">
