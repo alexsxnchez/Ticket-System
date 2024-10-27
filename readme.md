@@ -1,6 +1,6 @@
 # HTTP5203 XML Project - Ticket System
 
-- Live Site: https://support-ticket-systems.herokuapp.com/
+- Live Site: https://ticketsystem.alexisarevalo.com/login.php
 
 ### HTTP5203 - Individual Assignment
 #### Description:
@@ -24,7 +24,7 @@
 
 ## Images:
 
-![login view](readme-images/login.PNG)
+![login view](images/readme-images/login.PNG)
 
 #### Logins
 Admin
