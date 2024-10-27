@@ -24,7 +24,7 @@
 
 ## Images:
 
-![login view](images/readme-images/login.PNG)
+![login view](images/readme-images/login.png)
 
 #### Logins
 Admin
@@ -33,6 +33,6 @@ Admin
 Client
 - Username: danc | Password: danc
 
-![login view](images/readme-images/admin-list.PNG)
-![login view](images/readme-images/client-list.PNG)
-![login view](images/readme-images/messages.PNG)
+![login view](images/readme-images/admin-list.png)
+![login view](images/readme-images/client-list.png)
+![login view](images/readme-images/messages.png)
